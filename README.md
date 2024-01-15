@@ -14,3 +14,5 @@ YouTube Video Steale- I mean.. downloader
    main -o "home/you/Videos/Giga Laser Space Aliens Vs Cyborg Ninja Robot Sharks 3 full movie" -t video -u "https://www.youtube.com/watch?v=lvtSdPXRCN0"
 
   It's a simple program. I'm not sure how buggy it is, but there are a bunch of statements to help identify where it crashed
+
+Also, go here for cool things: https://discord.com/invite/golang
