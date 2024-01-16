@@ -16,7 +16,7 @@ import (
 func getDefaults(videoOutFile string) string {
 	if videoOutFile == "" {
 		fmt.Println("No video output file specified. Generating default...")
-		pwd, err := os.Getwd()
+		pwd, err := os.UserHomeDir()
 		if err != nil {
 			fmt.Println("Failed to get current working directory: ")
 			panic(err)

@@ -11,7 +11,7 @@ import (
 
 func main() {
 	//Define flags
-	videoOutfile := flag.String("o", "", "Output filepath. Do not specify a file extension. Default is $PWD/something.mp4")
+	videoOutfile := flag.String("o", "", "Output filepath. Do not specify a file extension. Default is $HOME/something.mp4")
 	videoURL := flag.String("u", "https://www.youtube.com/watch?v=dQw4w9WgXcQ", "URL of video to download")
 	videoType := flag.String("t", "video", "Accepts 'audio' or 'video' as input.")
 	// help := flag.String("h", "", "Outputs a help dialog, showing how to use the program.")
