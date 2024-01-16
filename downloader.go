@@ -62,7 +62,6 @@ func downloadVideo(client *youtube.Client, videoData *youtube.Video, videoType s
 	index := strings.LastIndex(videoOutFile, ".")
 	if index != -1 {
 		videoOutFile = videoOutFile[:index] //removes file extensions since I'm too lazy to check for them
-		fmt.Fprintln(os.Stderr, "Found")
 	}
 	videoOutFile += ".mp4"
 
@@ -87,9 +86,9 @@ func downloadVideo(client *youtube.Client, videoData *youtube.Video, videoType s
 	fileptr, err := os.Create(videoOutFile)
 	if err != nil {
 		fmt.Println("Failed to create video file, please see below:")
-		panic(err)
 	}
 	defer fileptr.Close()
+	fmt.Println("Video file created")
 
 	io.Copy(fileptr, stream)
 	fmt.Printf("Your file was downloaded to: %s\n", videoOutFile)
