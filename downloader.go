@@ -98,8 +98,9 @@ func downloadVideo(client *youtube.Client, videoData *youtube.Video, videoType s
 }
 
 // mp4 to mp3 conversion
+// TODO: Remove old mp4 after converting
 func convertVideo(videoOutFile string) {
-	_, err := os.Open(videoOutFile)
+	file, err := os.Open(videoOutFile)
 	if err != nil {
 		fmt.Println(videoOutFile, "does not exist. Creating..")
 		_, err = os.Create(videoOutFile)
@@ -108,6 +109,9 @@ func convertVideo(videoOutFile string) {
 			panic(err)
 		}
 	}
+	defer os.Remove(videoOutFile)
+	defer file.Close()
+
 	//handle if user input specifies mp4 or not
 	newvideoOutFile := strings.Replace(videoOutFile, ".mp4", ".mp3", -1)
 
