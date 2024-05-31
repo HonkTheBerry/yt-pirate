@@ -1,5 +1,6 @@
 # yt-pirate
 YouTube Video Steale- I mean.. downloader
+Probably has tons of issues lmao
 
 ##How ye use it
 
